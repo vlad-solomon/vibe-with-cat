@@ -51,13 +51,23 @@ export default function App() {
     return (
         <div className="relative h-full w-full border border-white/20 rounded-md bg-gray shadow-lg">
             <div className="absolute inset-0 flex flex-col items-center justify-between">
-                <div className="p-2 bg-gray border border-white/20 rounded-md shadow-md -translate-y-1 max-w-[500px] w-full text-center">
-                    <span className="leading-none">
+                <div className="relative p-2 bg-gray border border-white/20 rounded-md shadow-md -translate-y-1 max-w-[500px] w-full text-center overflow-hidden">
+                    <span className="leading-none font-bold">
                         Title of the video here
                     </span>
+                    <div className="absolute top-0 left-0 bg-white/20 h-full w-1/2 -z-10"></div>
                 </div>
-                <div className="translate-y-1 flex gap-4 flex-col items-center max-w-[500px] w-full">
-                    {/* <div className="w-full aspect-square bg-gray border-white/20 border rounded shadow-lg"></div> */}
+                <div className="translate-y-1 flex gap-2 flex-col items-center max-w-[500px] w-full">
+                    <div className="w-full aspect-square bg-gray border-white/20 border rounded shadow-lg">
+                        {query}
+                    </div>
+                    <input
+                        type="text"
+                        className="p-2 w-full border border-white/20 rounded shadow-lg bg-gray outline-none font-bold"
+                        placeholder="Search..."
+                        onChange={(e) => setQuery(e.target.value)}
+                        defaultValue={query}
+                    />
                     <div className="flex gap-4">
                         <Button icon={MagnifyingGlassIcon} />
                         <div className="flex gap-1">
