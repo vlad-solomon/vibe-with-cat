@@ -1,6 +1,16 @@
 import { useEffect, useState } from "react";
 import cat from "./assets/cat.webm";
 import ReactPlayer from "react-player/youtube";
+import Button from "./components/Button";
+
+import {
+    BackwardIcon,
+    MagnifyingGlassIcon,
+    PlayIcon,
+    SpeakerWaveIcon,
+    ForwardIcon,
+    Cog6ToothIcon,
+} from "@heroicons/react/20/solid";
 
 export default function App() {
     const [query, setQuery] = useState("cats");
@@ -41,34 +51,25 @@ export default function App() {
     return (
         <div className="relative h-full w-full border border-white/20 rounded-md bg-gray shadow-lg">
             <div className="absolute inset-0 flex flex-col items-center justify-between">
-                <div className="px-2 py-1 bg-gray border border-white/20 rounded-md shadow-md -translate-y-1">
+                <div className="p-2 bg-gray border border-white/20 rounded-md shadow-md -translate-y-1 max-w-[500px] w-full text-center">
                     <span className="leading-none">
                         Title of the video here
                     </span>
                 </div>
                 <div className="translate-y-1 flex gap-4 flex-col items-center max-w-[500px] w-full">
-                    <div className="w-full aspect-square bg-gray border-white/20 border rounded shadow-lg"></div>
+                    {/* <div className="w-full aspect-square bg-gray border-white/20 border rounded shadow-lg"></div> */}
                     <div className="flex gap-4">
-                        <button className="aspect-square h-8 border-white/20 rounded border bg-gray">
-                            x
-                        </button>
-                        <div className="flex gap-2">
-                            <button className="aspect-square h-8 border-white/20 rounded border bg-gray">
-                                x
-                            </button>
-                            <button className="aspect-square h-8 border-white/20 rounded border bg-gray">
-                                x
-                            </button>
-                            <button className="aspect-square h-8 border-white/20 rounded border bg-gray">
-                                x
-                            </button>
-                            <button className="aspect-square h-8 border-white/20 rounded border bg-gray">
-                                x
-                            </button>
+                        <Button icon={MagnifyingGlassIcon} />
+                        <div className="flex gap-1">
+                            <Button icon={BackwardIcon} />
+                            <Button icon={PlayIcon} />
+                            <Button icon={ForwardIcon} />
+                            <Button icon={SpeakerWaveIcon} />
+                            <div className="relative w-40 border-white/20 border rounded bg-gray overflow-hidden">
+                                <div className="absolute h-full w-1/2 bg-white"></div>
+                            </div>
                         </div>
-                        <button className="aspect-square h-8 border-white/20 rounded border bg-gray">
-                            x
-                        </button>
+                        <Button icon={Cog6ToothIcon} />
                     </div>
                 </div>
             </div>
