@@ -21,3 +21,7 @@ body {
     height: 100dvh;
     min-width: 320px;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}

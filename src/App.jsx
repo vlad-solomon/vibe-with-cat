@@ -64,12 +64,30 @@ export default function App() {
                     <div className="absolute top-0 left-0 bg-white/20 h-full w-1/2 -z-10"></div>
                 </div>
                 <div className="translate-y-1 flex gap-2 flex-col items-center max-w-[500px] w-full">
-                    <div className="w-full h-[500px] bg-gray border-white/20 border rounded shadow-lg overflow-auto">
+                    <div className="w-full h-[500px] bg-gray border-white/20 border rounded shadow-lg overflow-auto py-2 flex flex-col">
                         {loading ? "Loading..." : ""}
                         {!loading &&
                             results?.map(({ id, title, channel, link }) => (
-                                <div key={id} onClick={() => setLink(link)}>
-                                    &gt;&gt; {title}
+                                <div
+                                    key={id}
+                                    className="flex gap-2 hover:bg-white/10 px-2 py-1 cursor-pointer"
+                                    onClick={() => setLink(link)}
+                                >
+                                    <div className="w-2/5 aspect-video bg-black/10 border border-white/20 rounded overflow-hidden">
+                                        <img
+                                            className="h-full w-full object-cover"
+                                            src={`https://img.youtube.com/vi/${id}/mqdefault.jpg`}
+                                            alt={title}
+                                        />
+                                    </div>
+                                    <div className="flex-1 pt-1">
+                                        <span className="font-bold line-clamp-2">
+                                            {title}
+                                        </span>
+                                        <span className="text-sm">
+                                            {channel.name}
+                                        </span>
+                                    </div>
                                 </div>
                             ))}
                     </div>
