@@ -11,6 +11,7 @@ import {
     ForwardIcon,
     Cog6ToothIcon,
 } from "@heroicons/react/20/solid";
+import VolumeSlider from "./components/VolumeSlider";
 
 export default function App() {
     const [query, setQuery] = useState("cats");
@@ -74,10 +75,7 @@ export default function App() {
                             <Button icon={BackwardIcon} />
                             <Button icon={PlayIcon} />
                             <Button icon={ForwardIcon} />
-                            <Button icon={SpeakerWaveIcon} />
-                            <div className="relative w-40 border-white/20 border rounded bg-gray overflow-hidden">
-                                <div className="absolute h-full w-1/2 bg-white"></div>
-                            </div>
+                            <VolumeSlider />
                         </div>
                         <Button icon={Cog6ToothIcon} />
                     </div>
