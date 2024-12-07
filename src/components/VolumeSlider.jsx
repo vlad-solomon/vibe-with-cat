@@ -34,7 +34,7 @@ export default function VolumeSlider() {
         <>
             <Button icon={SpeakerWaveIcon} />
             <div
-                className="relative w-40 border-white/20 border rounded bg-gray overflow-hidden cursor-pointer"
+                className="relative w-40 border-white/20 border rounded bg-gray overflow-hidden cursor-grab"
                 ref={sliderRef}
                 onMouseDown={handleMouseDown}
             >
